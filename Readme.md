@@ -10,7 +10,7 @@
 <img src="./doc/images/Jenkins-hello-world-master.png" height ="400" width= "800" alt="Jenkins Pipeline" />
 <br>
    
-- This example uses a [Jenkins multi-branch pipelines].
+
 - The code for this pipeline can be found [here](./Jenkinsfile).
 
 #### SonarQube (Code Static Analyzer Tool - CSAT scan) output:
@@ -146,7 +146,7 @@ Refer to detailed [Installation instructions](./doc/Install.md)
 
 # Jenkins Multibranch Pipeline
 
-This example uses a [Jenkins multi-branch pipelines].
+This example uses a [Jenkins multi-branch pipelines](https://www.jenkins.io/blog/2015/12/03/pipeline-as-code-with-multibranch-workflows-in-jenkins/https://www.jenkins.io/blog/2015/12/03/pipeline-as-code-with-multibranch-workflows-in-jenkins/).
 The code for this pipeline can be found [here](./Jenkinsfile).
 
 Jenkins multi-branch pipelines build all your branches in your repository under source code
