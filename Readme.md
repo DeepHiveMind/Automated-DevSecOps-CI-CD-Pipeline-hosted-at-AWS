@@ -2,8 +2,16 @@
 
 ## Overview 
 
+A simple hello-world-webapp project continuous deployment project.
 
-
+- This project involves 
+	- [completely automated DevSecOps pipeline](#DevSecOps-Pipeline-Steps)
+	- [AWS CloudFormation Stack](./cloud-formation/helloworld/app/main.yml) for spinning up Infra and binding it
+	- AWS Cloud
+	
+- & The outcome for user is 
+	- simple helloworld webapp(#Helloworld-Web-Application) 
+	- on the top of [continuous deployment assemply / factory-pipelin-with-quality-assurance/ completely automated DevSecOps pipeline](#DevSecOps-Pipeline-Steps) 
 
 ##### Pipeline executions
 <br>
@@ -18,12 +26,12 @@
 <img src="./doc/images/SonarQube-Example.png" height ="400" width= "800" alt="SonarQube" />
 <br>
 
-##### Hello-world Web Application
+##### Helloworld Web Application
 <br> 
 <img src="./doc/images/hello-world-webapp.png" height ="200" width= "600" alt="hello-world-webapp" />
 <br> 
 
-## Pipeline Steps
+## DevSecOps Pipeline Steps
 
 1. Build the Java [Spring Boot] [application](./webapp/src/main) using [Apache Maven]
    This includes running [unit tests](./webapp/src/test//java).
