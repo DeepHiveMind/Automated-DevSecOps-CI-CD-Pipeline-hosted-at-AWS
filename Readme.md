@@ -1,21 +1,6 @@
-# DevSecOps CI/CD Pipeline Example
+# Automated DevSecOps CI CD Pipeline Example Hosted at AWS
 
-# Jenkins Multibranch Pipeline
 
-This example uses a [Jenkins multi-branch pipelines].
-The code for this pipeline can be found [here](./Jenkinsfile).
-
-Jenkins multi-branch pipelines build all your branches in your repository under source code
-control (e.g. github) automatically. Note that you can explicitly include/exclude branch using
-regular expressions.
-This allows for a development approach with short-lived feature and bugfix 
-branches that can be build, deployed, and tested simultaneously.
-This is important, because it  allows developers to update and test the pipeline as part of 
-the change request (or bugfix) they are working on,
-so the pipeline code always stays in sync with the the application code.
-Furthermore, __"standard"__ development processes can now not only be applied to the
-application code, but also to the pipeline code, specifically source code control, testing, 
-and code review.
 
 ## Pipeline Steps
 
@@ -39,6 +24,9 @@ Web Application:
 
 Pipeline executions:
    ![Jenkins Pipeline](./doc/images/Jenkins-hello-world-master.png)
+   
+	- This example uses a [Jenkins multi-branch pipelines].
+	- The code for this pipeline can be found [here](./Jenkinsfile).
 
 Pause step (step 8):
    ![Pause Pipeline](./doc/images/Jenkins-hello-world-master-pause.png)
@@ -137,3 +125,21 @@ process:
 [SonarQube]: https://www.sonarqube.org/
 [GitHub-Jira Integration]: https://confluence.atlassian.com/adminjiracloud/connect-jira-cloud-to-github-814188429.html
 [Saucelabs]: https://saucelabs.com/
+
+
+# Jenkins Multibranch Pipeline
+
+This example uses a [Jenkins multi-branch pipelines].
+The code for this pipeline can be found [here](./Jenkinsfile).
+
+Jenkins multi-branch pipelines build all your branches in your repository under source code
+control (e.g. github) automatically. Note that you can explicitly include/exclude branch using
+regular expressions.
+This allows for a development approach with short-lived feature and bugfix 
+branches that can be build, deployed, and tested simultaneously.
+This is important, because it  allows developers to update and test the pipeline as part of 
+the change request (or bugfix) they are working on,
+so the pipeline code always stays in sync with the the application code.
+Furthermore, __"standard"__ development processes can now not only be applied to the
+application code, but also to the pipeline code, specifically source code control, testing, 
+and code review.
