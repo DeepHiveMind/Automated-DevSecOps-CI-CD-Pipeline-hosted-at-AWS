@@ -15,7 +15,7 @@ A simple hello-world-webapp project continuous deployment project.
 - & The outcome for DevSecOps Engineer / PlatformOps engineer is 
 	- Robust [continuous deployment assemply / factory-pipelin-with-quality-assurance/ completely automated DevSecOps pipeline](#DevSecOps-Pipeline-Steps) on AWS
 
-##### Pipeline executions
+##### DevSecOps Pipeline execution view:
 <br>
 <img src="./doc/images/Jenkins-hello-world-master.png" height ="400" width= "800" alt="Jenkins Pipeline" />
 <br>
@@ -23,12 +23,12 @@ A simple hello-world-webapp project continuous deployment project.
 
 - The code for this pipeline can be found [here](./Jenkinsfile).
 
-#### SonarQube (Code Static Analyzer Tool - CSAT scan) output:
+#### SonarQube (Code Static Analyzer Tool - CSAT scan) output view:
 <br>
 <img src="./doc/images/SonarQube-Example.png" height ="400" width= "800" alt="SonarQube" />
 <br>
 
-##### Helloworld Web Application
+##### Helloworld Web Application:
 <br> 
 <img src="./doc/images/hello-world-webapp.png" height ="200" width= "600" alt="hello-world-webapp" />
 <br> 
