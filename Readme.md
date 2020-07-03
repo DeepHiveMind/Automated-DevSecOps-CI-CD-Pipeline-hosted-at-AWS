@@ -94,24 +94,24 @@ process:
 
 
 ## How to Install
-[Installation instructions](./doc/Install.md) can be found [here]((./doc/Install.md)).
+Refer to detailed [Installation instructions](./doc/Install.md)
 
 
 
 - [Jenkins multi-branch pipelines](https://jenkins.io/blog/2015/12/03/pipeline-as-code-with-multibranch-workflows-in-jenkins/)
-- [ZAProxy]: https://github.com/zaproxy/zaproxy
-- [Taurus]: https://gettaurus.org/
-- [Apache jMeter]: http://jmeter.apache.org/
-- [Browserstack]: https://www.browserstack.com/
-- [Postman]: https://www.getpostman.com/docs/postman/scripts/test_scripts
-- [Newman]: https://github.com/postmanlabs/newman
-- [Newman Docker image]: https://hub.docker.com/r/postman/newman_ubuntu1404/
-- [Spring Boot]: https://projects.spring.io/spring-boot/
-- [Python Selenium Webdriver API binding]: http://selenium-python.readthedocs.io/api.html
-- [Apache Maven]: https://maven.apache.org/
-- [SonarQube]: https://www.sonarqube.org/
-- [GitHub-Jira Integration]: https://confluence.atlassian.com/adminjiracloud/connect-jira-cloud-to-github-814188429.html
-- [Saucelabs]: https://saucelabs.com/
+- [ZAProxy](https://github.com/zaproxy/zaproxy)
+- [Taurus](https://gettaurus.org/)
+- [Apache jMeter](http://jmeter.apache.org/)
+- [Browserstack](https://www.browserstack.com/)
+- [Postman](https://www.getpostman.com/docs/postman/scripts/test_scripts)
+- [Newman](https://github.com/postmanlabs/newman)
+- [Newman Docker image](https://hub.docker.com/r/postman/newman_ubuntu1404/)
+- [Spring Boot](https://projects.spring.io/spring-boot/)
+- [Python Selenium Webdriver API binding](http://selenium-python.readthedocs.io/api.html)
+- [Apache Maven](https://maven.apache.org/)
+- [SonarQube](https://www.sonarqube.org/)
+- [GitHub-Jira Integration](https://confluence.atlassian.com/adminjiracloud/connect-jira-cloud-to-github-814188429.html)
+- [Saucelabs](https://saucelabs.com/)
 
 
 ## Possible Extensions
