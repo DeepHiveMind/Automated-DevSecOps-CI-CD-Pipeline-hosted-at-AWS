@@ -13,7 +13,22 @@ A simple hello-world-webapp project continuous deployment project.
 	- Simple [helloworld webapp](#Helloworld-Web-Application) 
 	
 - & The outcome for DevSecOps Engineer / PlatformOps engineer is 
-	- Robust [continuous deployment assemply / factory-pipelin-with-quality-assurance/ completely automated DevSecOps pipeline](#DevSecOps-Pipeline-Steps) on AWS
+	- Robust [continuous deployment assemply / factory-pipelin-with-quality-assurance/ completely automated DevSecOps pipeline](#DevSecOps-Pipeline-Steps-nuances) on AWS with
+	
+1. Build the Java [Spring Boot] [application](./webapp/src/main) using [Apache Maven]
+   This includes running [unit tests](./webapp/src/test//java).
+2. Performs a security scan on the Java code base using [SonarQube](https://www.sonarqube.org/) via Maven
+3. Build and register a version of the [Docker image](./Dockerfile)
+4. Deploy the image to the `dev` environment
+5. Run the automated browser tests against the application in the `dev` environment.
+   The [browser tests](./webapp/src/test/python/helloworld) are written in
+   [Python](./webapp/src/test/python) using the [Python Selenium Webdriver API binding](https://selenium-python.readthedocs.io/api.html).
+6. Deploy the image to the `test` environment
+7. Run the automated browser tests against the application in the `test` environment
+8. Pause for confirmation that the new image can be deployed to the `prod` environment.
+   Allow for some manual tests to be executed before 
+   This step times out after some (configurable amount of) time.
+9. Deploy the image to the `prod` (or live) environment
 
 ##### DevSecOps Pipeline execution view:
 <br>
@@ -32,55 +47,6 @@ A simple hello-world-webapp project continuous deployment project.
 <br> 
 <img src="./doc/images/hello-world-webapp.png" height ="200" width= "600" alt="hello-world-webapp" />
 <br> 
-
-## DevSecOps Pipeline Steps
-
-1. Build the Java [Spring Boot] [application](./webapp/src/main) using [Apache Maven]
-   This includes running [unit tests](./webapp/src/test//java).
-2. Performs a security scan on the Java code base using [SonarQube] via Maven
-3. Build and register a version of the [Docker image](./Dockerfile)
-4. Deploy the image to the `dev` environment
-5. Run the automated browser tests against the application in the `dev` environment.
-   The [browser tests](./webapp/src/test/python/helloworld) are written in
-   [Python](./webapp/src/test/python) using the [Python Selenium Webdriver API binding].
-6. Deploy the image to the `test` environment
-7. Run the automated browser tests against the application in the `test` environment
-8. Pause for confirmation that the new image can be deployed to the `prod` environment.
-   Allow for some manual tests to be executed before 
-   This step times out after some (configurable amount of) time.
-9. Deploy the image to the `prod` (or live) environment
-
-
-
-Pause step (step 8):
-   ![Pause Pipeline](./doc/images/Jenkins-hello-world-master-pause.png)
-
-
-Note that -
-- in the above steps, steps 5 and up in the pipeline are __only__ 
-executed against the `master` branch.
-
-- The pipeline code is configured to treat development (feature/bugfix) branches as
-additional `dev` environments.
-
-- These temporary additional `dev` environments can quickly be created using the application's
-[cloud-formation script](./cloud-formation/helloworld/app/main.yml) and
-
-- setting the `Environment` parameter to `dev-<branch-name>` and the `SecurityContext` parameter
-to `dev`.
-- The new `dev-<branch-name>` environment now operates in the same security context as the `dev`
-environment`.
-
-Now when a new temporary development branch is created of the master branch,
-the Jenkins pipeline will automatically discover the new branch and
-execute the pipeline code from that specific branch allow a developer to build and test
-the branch specific changes in isolation, including changes to the pipeline code.
-
-Multiple branch executions (`feature1` and `master`) after creating the `feature1` branch:
-![Multiple branch executions](./doc/images/Jenkins-hello-world-multiple-branches.png)
-
-Development branch (`feature`) execution details:
-![Multiple branch executions](./doc/images/Jenkins-hello-world-development-branch-execution.png)
 
 
 
@@ -138,6 +104,56 @@ Refer to detailed [Installation instructions](./doc/Install.md)
 - [SonarQube](https://www.sonarqube.org/)
 - [GitHub-Jira Integration](https://confluence.atlassian.com/adminjiracloud/connect-jira-cloud-to-github-814188429.html)
 - [Saucelabs](https://saucelabs.com/)
+
+
+## DevSecOps Pipeline Steps Nuances
+
+
+1. Build the Java [Spring Boot] [application](./webapp/src/main) using [Apache Maven]
+   This includes running [unit tests](./webapp/src/test//java).
+2. Performs a security scan on the Java code base using [SonarQube](https://www.sonarqube.org/) via Maven
+3. Build and register a version of the [Docker image](./Dockerfile)
+4. Deploy the image to the `dev` environment
+5. Run the automated browser tests against the application in the `dev` environment.
+   The [browser tests](./webapp/src/test/python/helloworld) are written in
+   [Python](./webapp/src/test/python) using the [Python Selenium Webdriver API binding](https://selenium-python.readthedocs.io/api.html).
+6. Deploy the image to the `test` environment
+7. Run the automated browser tests against the application in the `test` environment
+8. Pause for confirmation that the new image can be deployed to the `prod` environment.
+   Allow for some manual tests to be executed before 
+   This step times out after some (configurable amount of) time.
+9. Deploy the image to the `prod` (or live) environment
+
+
+Pause step (step 8):
+   ![Pause Pipeline](./doc/images/Jenkins-hello-world-master-pause.png)
+
+
+Note that -
+- in the above steps, steps 5 and up in the pipeline are __only__ 
+executed against the `master` branch.
+
+- The pipeline code is configured to treat development (feature/bugfix) branches as
+additional `dev` environments.
+
+- These temporary additional `dev` environments can quickly be created using the application's
+[cloud-formation script](./cloud-formation/helloworld/app/main.yml) and
+
+- setting the `Environment` parameter to `dev-<branch-name>` and the `SecurityContext` parameter
+to `dev`.
+- The new `dev-<branch-name>` environment now operates in the same security context as the `dev`
+environment`.
+
+Now when a new temporary development branch is created of the master branch,
+the Jenkins pipeline will automatically discover the new branch and
+execute the pipeline code from that specific branch allow a developer to build and test
+the branch specific changes in isolation, including changes to the pipeline code.
+
+Multiple branch executions (`feature1` and `master`) after creating the `feature1` branch:
+![Multiple branch executions](./doc/images/Jenkins-hello-world-multiple-branches.png)
+
+Development branch (`feature`) execution details:
+![Multiple branch executions](./doc/images/Jenkins-hello-world-development-branch-execution.png)
 
 
 ## Possible Extensions
