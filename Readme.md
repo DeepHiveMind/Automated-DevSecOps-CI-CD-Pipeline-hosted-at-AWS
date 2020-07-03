@@ -1,6 +1,17 @@
 # Automated DevSecOps CI CD Pipeline Example Hosted at AWS
 
+## Overview 
 
+- Web Application:
+<br> 
+ <src="./doc/images/hello-world-webapp.png" height ="200" width= "600" alt="hello-world-webapp" />
+<br> 
+
+- Pipeline executions:
+   ![Jenkins Pipeline](./doc/images/Jenkins-hello-world-master.png)
+   
+	- This example uses a [Jenkins multi-branch pipelines].
+	- The code for this pipeline can be found [here](./Jenkinsfile).
 
 ## Pipeline Steps
 
@@ -19,8 +30,7 @@
    This step times out after some (configurable amount of) time.
 9. Deploy the image to the `prod` (or live) environment
 
-Web Application:
-  ![Hello World web app](./doc/images/hello-world-webapp.png)
+
 
 Pipeline executions:
    ![Jenkins Pipeline](./doc/images/Jenkins-hello-world-master.png)
