@@ -9,9 +9,11 @@ A simple hello-world-webapp project continuous deployment project.
 	- [AWS CloudFormation Stack](./cloud-formation/helloworld/app/main.yml) for spinning up Infra and binding it
 	- AWS Cloud
 	
-- & The outcome for user is 
-	- simple helloworld webapp(#Helloworld-Web-Application) 
-	- on the top of [continuous deployment assemply / factory-pipelin-with-quality-assurance/ completely automated DevSecOps pipeline](#DevSecOps-Pipeline-Steps) 
+- & The outcome for User is 
+	- Simple [helloworld webapp](#Helloworld-Web-Application) 
+	
+- & The outcome for DevSecOps Engineer / PlatformOps engineer is 
+	- Robust [continuous deployment assemply / factory-pipelin-with-quality-assurance/ completely automated DevSecOps pipeline](#DevSecOps-Pipeline-Steps) on AWS
 
 ##### Pipeline executions
 <br>
