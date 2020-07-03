@@ -4,11 +4,14 @@
 
 - Web Application:
 <br> 
- <src="./doc/images/hello-world-webapp.png" height ="200" width= "600" alt="hello-world-webapp" />
+<img src="./doc/images/hello-world-webapp.png" height ="200" width= "600" alt="hello-world-webapp" />
 <br> 
 
+
 - Pipeline executions:
-   ![Jenkins Pipeline](./doc/images/Jenkins-hello-world-master.png)
+ 
+<img src="./doc/images/Jenkins-hello-world-master.png" height ="400" width= "600" alt="Jenkins Pipeline" />
+<br>
    
 	- This example uses a [Jenkins multi-branch pipelines].
 	- The code for this pipeline can be found [here](./Jenkinsfile).
