@@ -2,19 +2,26 @@
 
 ## Overview 
 
-- Web Application:
+
+
+
+##### Pipeline executions
+<br>
+<img src="./doc/images/Jenkins-hello-world-master.png" height ="400" width= "800" alt="Jenkins Pipeline" />
+<br>
+   
+- This example uses a [Jenkins multi-branch pipelines].
+- The code for this pipeline can be found [here](./Jenkinsfile).
+
+#### SonarQube (Code Static Analyzer Tool - CSAT scan) output:
+<br>
+<img src="./doc/images/SonarQube-Example.png" height ="400" width= "800" alt="SonarQube" />
+<br>
+
+##### Hello-world Web Application
 <br> 
 <img src="./doc/images/hello-world-webapp.png" height ="200" width= "600" alt="hello-world-webapp" />
 <br> 
-
-
-- Pipeline executions:
- 
-<img src="./doc/images/Jenkins-hello-world-master.png" height ="400" width= "600" alt="Jenkins Pipeline" />
-<br>
-   
-	- This example uses a [Jenkins multi-branch pipelines].
-	- The code for this pipeline can be found [here](./Jenkinsfile).
 
 ## Pipeline Steps
 
@@ -35,27 +42,23 @@
 
 
 
-Pipeline executions:
-   ![Jenkins Pipeline](./doc/images/Jenkins-hello-world-master.png)
-   
-	- This example uses a [Jenkins multi-branch pipelines].
-	- The code for this pipeline can be found [here](./Jenkinsfile).
-
 Pause step (step 8):
    ![Pause Pipeline](./doc/images/Jenkins-hello-world-master-pause.png)
 
-SonarQube (security scan) output:
-   ![SonarQube](./doc/images/SonarQube-Example.png)
 
-Note that in the above steps, steps 5 and up in the pipeline are __only__ 
+Note that -
+- in the above steps, steps 5 and up in the pipeline are __only__ 
 executed against the `master` branch.
-The pipeline code is configured to treat development (feature/bugfix) branches as
+
+- The pipeline code is configured to treat development (feature/bugfix) branches as
 additional `dev` environments.
-These temporary additional `dev` environments can quickly be created using the application's
+
+- These temporary additional `dev` environments can quickly be created using the application's
 [cloud-formation script](./cloud-formation/helloworld/app/main.yml) and
-setting the `Environment` parameter to `dev-<branch-name>` and the `SecurityContext` parameter
+
+- setting the `Environment` parameter to `dev-<branch-name>` and the `SecurityContext` parameter
 to `dev`.
-The new `dev-<branch-name>` environment now operates in the same security context as the `dev`
+- The new `dev-<branch-name>` environment now operates in the same security context as the `dev`
 environment`.
 
 Now when a new temporary development branch is created of the master branch,
